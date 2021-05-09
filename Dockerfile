@@ -9,8 +9,6 @@ WORKDIR /usr/src/app
 
 COPY --chown=node:node . . 
 
-RUN chmod +w -R .
-
 RUN npm install && \
     npm install redis@0.8.1 && \
     npm install pg@4.1.1 && \
