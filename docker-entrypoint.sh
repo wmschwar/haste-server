@@ -4,9 +4,6 @@
 
 set -e
 
-ls -al
-sudo chmod +x .
-
 node ./docker-entrypoint.js > ./config.js
 
 exec "$@"
