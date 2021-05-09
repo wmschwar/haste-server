@@ -9,13 +9,14 @@ WORKDIR /usr/src/app
 
 COPY --chown=node:node . . 
 
+RUN chmod +w -R .
+
 RUN npm install && \
     npm install redis@0.8.1 && \
     npm install pg@4.1.1 && \
     npm install memcached@2.2.2 && \
     npm install aws-sdk@2.738.0 && \
     npm install rethinkdbdash@2.3.31 && \
-    chmod 666 ./config.js
 
 ENV STORAGE_TYPE=memcached \
     STORAGE_HOST=127.0.0.1 \
